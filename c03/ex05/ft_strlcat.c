@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 05:50:38 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/08 16:18:52 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/09 13:42:03 by aviscogl         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		n++;
 	}
 	*dest = 0x00;
-	return (i + n);
+	return (ft_strlen(src) + ft_strlen(dest));
 }

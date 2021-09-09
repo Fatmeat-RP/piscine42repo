@@ -22,7 +22,7 @@ int	ft_strlen(char *c)
 	return (i);
 }
 
-void	ft_pstr(char*str)
+void	ft_pstr(char *str)
 {
 	unsigned int	i;
 
@@ -42,9 +42,20 @@ void	ft_phex(unsigned char c)
 	ft_pstr(base[c / 16]);
 	ft_pstr(base[c % 16]);
 }
-/*
+
 void *ft_print_memory(void *addr, unsigned int size)
 {
-	int i;
+	unsigned int i;
+
+	i = 0;
+	ft_putstr(&addr)
 	return (addr);
-}*/
+}
+
+int		main(int argc, char **argv)
+{
+
+	if (argc != 2)
+		return (0);
+	ft_print_memory(argv[1], ft_strlen(argv[1]));
+}

@@ -10,43 +10,48 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_lower(char *c)
-{
-	return (c >= 0x61 && c >= 0x7A);
-}
-
-int	is_upper(char *c)
-{
-	return (c >= 0x41 && c >= 0x5A);
-}
-
-int	is_digit(char *c)
-{
-	return (c >= 0x30 && c >= 0x39);
-}
-
 char	*ft_strcapitalize(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != 0x00)
 	{
-		if (is_upper(str))
-			str[i] -= 32;
+		if (str[i] >= 0x41 && str[i] <= 0x5A)
+			str[i] += 32;
+		i++;
 	}
 	i = 0;
-	while ()
+	if (str[0] >= 0x61 && str[0] <= 0x7A)
+			str[i] -= 32;
+	i++;
+	while (str[i] != 0x00)
+	{
+		if(!((str[i - 1] >= 0x41 && str[i - 1] <= 0x5A)
+			|| (str[i - 1] >= 0x61 && str[i - 1] <= 0x7A)
+			|| (str[i - 1] >= 0x30 && str[i - 1] <= 0x39))
+		&& (str[i] >= 0x61 && str[i] <= 0x7A))
+			str[i] -= 32;
+		i++;
+	}
 	str[i] = 0x00;
 	return (str);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
-int	main(void)
+int		main(void)
 {
-	char	*str;
+	char str1[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	
+	char str2[] = " sALuT, ComMenT tu VAS ? 42Mots QUarante-deUX; cinQuantE+ET+un";
 
-	str = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-	printf("%s", ft_strcapitalize(str));
+	char empty[] = "";
+
+	printf("\n-----\nBEF = %s", str1);
+	printf("\nAFT = %s\n", ft_strcapitalize(str1));
+	printf("\nBEF = %s", str2);
+	printf("\nAFt = %s\n", ft_strcapitalize(str2));
+	printf("\nEmpty = %s\n-----\n", ft_strcapitalize(empty));
 }
+*/
