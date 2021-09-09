@@ -1,0 +1,5 @@
+Credentials cache: API:D917B85A-2353-4D51-A860-EF18AA94DD88
+        Principal: acarle-m@42LYON.FR
+
+  Issued                Expires             Flags    Principal
+Aug 30 10:33:27 2021  Aug 31 10:33:27 2021  FPRIA  krbtgt/42LYON.FR@42LYON.FR
