@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 05:50:38 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/09 13:42:03 by aviscogl         ###   ########lyon.fr   */
+/*   Created: 2021/09/09 15:16:49 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/09 15:48:24 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

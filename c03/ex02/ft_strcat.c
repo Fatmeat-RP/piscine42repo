@@ -6,15 +6,15 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 05:45:32 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/08 16:26:29 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/09 15:48:19 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcat(char *dest, char *src)
 {
-	while (*dest != '\0')
+	while (*dest != 0x00)
 		dest++;
-	while (*src != '\0')
+	while (*src != 0x00)
 	{
 		*dest = *(unsigned char *)src;
 		dest++;

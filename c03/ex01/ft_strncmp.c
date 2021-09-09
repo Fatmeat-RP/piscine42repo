@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acarle-m <acarle-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 03:44:40 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/08 05:49:31 by acarle-m         ###   ########.fr       */
+/*   Created: 2021/09/09 15:17:25 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/09 15:48:22 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 		i++;
 	return (s1[i] - s2[i]);
 }
+
 /*
 #include <stdio.h>
 #include <string.h>
