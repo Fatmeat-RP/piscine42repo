@@ -12,9 +12,9 @@
 
 #include <unistd.h>
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int c;
+	int	c;
 
 	c = 0;
 	if (argc > 0)

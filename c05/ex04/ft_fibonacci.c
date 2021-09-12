@@ -10,19 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(int index)
+int	ft_fibonacci(int index)
 {
-	int n;
+	int	n;
 
-    n = 0;
+	n = 0;
 	if (index == 0)
 		return (0);
 	else if (index == 1)
 		return (1);
-	else (index > 1)
-	{
-		n = ft_fibonacci(index - 1) + ft_fibonacci(index - 2);
-		return (n);
-	}
-    return (-1);
+	else if (index < 0)
+		return (-1);
+	else
+		return (n = ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	return (0);
 }

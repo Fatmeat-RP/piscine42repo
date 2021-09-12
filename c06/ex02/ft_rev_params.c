@@ -12,20 +12,29 @@
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+void	ft_putchar(char c)
 {
-	while (*str)
-		ft_putchar(*str++);
+	write(1, &c, 1);
 }
 
-/*ft_swap*/
+void	ft_putstr(char *str)
+{
+	int	i;
 
-int		main(int argc, char **argv)
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
+int	main(int argc, char **argv)
 {
 	while (argc > 1)
 	{
 		ft_putstr(argv[--argc]);
-		write(1, '\n', 1);
+		write(1, "\n", 1);
 	}
 	return (0);
 }

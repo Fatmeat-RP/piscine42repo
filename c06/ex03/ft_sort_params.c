@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/12 16:03:56 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/12 16:03:56 by acarle-m         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 #include <unistd.h>
@@ -9,16 +21,16 @@ void	ft_putchar(char c)
 
 void	ft_strswap(char **a, char **b)
 {
-	char *c;
+	char	*c;
 
 	c = *a;
 	*a = *b;
 	*b = c;
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	ft_sort_str_tab(argv + 1, argc - 1);
 	i = 0;

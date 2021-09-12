@@ -12,10 +12,10 @@
 
 #include <unistd.h>
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int c;
-	int d;
+	int	c;
+	int	d;
 
 	c = 1;
 	d = 0;
