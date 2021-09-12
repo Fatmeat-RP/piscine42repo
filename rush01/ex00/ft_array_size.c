@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_array_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 20:42:52 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/12 22:28:25 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/12 19:13:37 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/12 22:28:19 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "rush.h"
-
-int	main(void)
+int	ft_array_size(char **array)
 {
-	char	*array;
-	int		size;
+	int	x;
+	int	y;
 
-	size = 6;
-	array = malloc((size * size) * sizeof(char));
-	ft_array_fill(array, size);
-	ft_put_array(array, size);
+	x = 0;
+	y = 0;
+	while (array[x][y])
+	{
+		x++;
+		y++;
+	}
+	return (x * y);
 }

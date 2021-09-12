@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_valid_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 20:42:52 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/12 22:28:25 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/12 22:27:36 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/12 22:28:24 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "rush.h"
-
-int	main(void)
+int	ft_valid_arg(char *argv, int size)
 {
-	char	*array;
-	int		size;
+	int	i;
+	int	arg;
 
-	size = 6;
+	i = 0;
 	array = malloc((size * size) * sizeof(char));
-	ft_array_fill(array, size);
-	ft_put_array(array, size);
+	arg = ft_atoi(argv);
+	while (i < (size * 4))
+	{
+		if (argc[i] > size + '0')
+			return (0);
+		else if (ft_array_size(argv) > (size * 4))
+			return (0);
+	}
+	return (1);
 }

@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_array_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 20:42:52 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/12 22:28:25 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/12 21:09:17 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/12 22:28:20 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
-#include "rush.h"
 
-int	main(void)
+void	ft_array_free(void)
 {
-	char	*array;
-	int		size;
-
-	size = 6;
-	array = malloc((size * size) * sizeof(char));
-	ft_array_fill(array, size);
-	ft_put_array(array, size);
+	while (size > 0)
+	{
+		free(array[size]);
+		size--;
+	}
+	free(array);
 }

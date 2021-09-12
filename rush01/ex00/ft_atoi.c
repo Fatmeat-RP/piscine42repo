@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 20:42:52 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/12 22:28:25 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/12 18:56:45 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/12 22:29:12 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "rush.h"
-
-int	main(void)
+int	ft_atoi(char *str)
 {
-	char	*array;
-	int		size;
+	int	sign;
+	int	i;
+	int	n;
 
-	size = 6;
-	array = malloc((size * size) * sizeof(char));
-	ft_array_fill(array, size);
-	ft_put_array(array, size);
+	i = 0;
+	sign = 1;
+	while ((str[i] == 0x20) || (str[i] == 0x09)
+		|| (str[i] >= 0x0A && str[i] <= 0x0D))
+		i++;
+	while (str[i] == 0x2D || str[i] == 0x2B)
+		if (str[i++] == 0x2D)
+			sign *= -1;
+	n = 0;
+	while (str[i] >= 0x30 && str[i] <= 0x39)
+	{
+		n = 10 * n + (str[i] - '0');
+		i++;
+	}
+	return (sign * n);
 }

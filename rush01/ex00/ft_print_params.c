@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 20:42:52 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/12 22:28:25 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/12 19:39:14 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/12 22:28:22 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "rush.h"
-
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	*array;
-	int		size;
+	int	c;
+	int	d;
 
-	size = 6;
-	array = malloc((size * size) * sizeof(char));
-	ft_array_fill(array, size);
-	ft_put_array(array, size);
+	c = 1;
+	d = 0;
+	if (argc > 1)
+	{
+		while (c < argc)
+		{
+			d = 0;
+			while (argv[c][d] != '\0')
+			{
+				write(1, &argv[c][d], 1);
+				d++;
+			}
+			write(1, "\n", 1);
+			c++;
+		}
+	}
+	return (0);
 }
