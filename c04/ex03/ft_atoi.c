@@ -3,37 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aviscogl <aviscogl@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 19:15:00 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/09 13:56:25 by aviscogl         ###   ########lyon.fr   */
+/*   Updated: 2021/09/11 16:10:16 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_atoi(char *str)
-{
-	unsigned int	i;
-	unsigned int	duff;
-	int signe;
+#include <stdio.h>
 
+int	ft_atoi(char *str)
+{
+	int	sign;
+	int	i;
+	int	n;
 
 	i = 0;
-	signe = 1;
-	while (!(str[i] == 0x2D || str[i] == 0x2B) && (str[i] != 0x00))
+	sign = 1;
+	while ((str[i] == 0x20) || (str[i] == 0x09)
+		|| (str[i] >= 0x0A && str[i] <= 0x0D))
 		i++;
-	while (str[i] == '-' || str[i] == '+')
+	while (str[i] == 0x2D || str[i] == 0x2B)
+		if (str[i++] == 0x2D)
+			sign *= -1;
+	n = 0;
+	while (str[i] >= 0x30 && str[i] <= 0x39)
 	{
-		if (str[i] == '-')
-			signe *= -1;
+		n = 10 * n + (str[i] - '0');
 		i++;
 	}
-	while ((str[i] <= 0x39 str[i] >= 0x30) && (str[i] != 0x00))
-	{
-			duff[i] /= 10 + str[i] - '0';
-			i++;
-	}
-	if (signe == -1)
-		return (-duff);
-	else
-	return (duff);
+	return (sign * n);
 }
