@@ -12,7 +12,7 @@
 
 int	ft_sqrt(int nb)
 {
-	int	n;
+	long	n;
 
 	n = 1;
 	if (nb < 1)

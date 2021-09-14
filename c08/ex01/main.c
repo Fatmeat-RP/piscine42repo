@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/08 19:15:00 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/14 23:32:17 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/14 15:54:01 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/14 16:00:09 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
-{
-	int	sign;
-	int	i;
-	int	n;
+#include "ft_boolean.h"
 
-	i = 0;
-	sign = 1;
-	while (((str[i] == 0x20) || (str[i] == 0x09)
-			|| (str[i] >= 0x0A && str[i] <= 0x0D)))
-		i++;
-	while (str[i] == 0x2D || str[i] == 0x2B)
-		if (str[i++] == 0x2D)
-			sign *= -1;
-	n = 0;
-	while (str[i] >= 0x30 && str[i] <= 0x39)
-	{
-		n = 10 * n + (str[i] - '0');
-		i++;
-	}
-	return (sign * n);
+void	ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
+
+t_bool	ft_is_even(int nbr)
+{
+	return ((EVEN(nbr)) ? TRUE : FALSE);
+}
+
+int	main(int argc, char **argv)
+{
+	(void)argv;
+	if (ft_is_even(argc - 1) == TRUE)
+        ft_putstr(EVEN_MSG);
+	else
+		ft_putstr(ODD_MSG);
+	return (SUCCESS);
 }
