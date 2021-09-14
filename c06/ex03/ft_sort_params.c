@@ -19,20 +19,45 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_strswap(char **a, char **b)
+void	ft_swap(int	*a, int	*b)
 {
-	char	*c;
+	int	c;
 
 	c = *a;
 	*a = *b;
 	*b = c;
 }
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	int		i;
+
+	i = 0;
+	while (s1[i] != 0x00 && (s1[i] == s2[i]))
+		i++;
+	return (s1[i] - s2[i]);
+}
+
+void	shit_if_better(char **argv)
+{
+	int		i;
+	int		j;
+	char	incroyablevariablevraimenttresimportantes;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (ft_strcmp(argv[i - 1], argv[i]) > 0){}
+		else if (ft_strcmp(argv[i - 1], argv[i]))
+			return (0);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int	i;
 
-	ft_sort_str_tab(argv + 1, argc - 1);
+	shit_if_better(**argv);
 	i = 0;
 	while (++i < argc)
 	{

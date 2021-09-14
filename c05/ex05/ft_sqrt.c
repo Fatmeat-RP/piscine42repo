@@ -15,16 +15,13 @@ int	ft_sqrt(int nb)
 	int	n;
 
 	n = 1;
-	if (nb > 0)
+	if (nb < 1)
+		return (0);
+	while (n * n <= nb)
 	{
-		while (n * n <= nb)
-		{
-			if (n * n == nb)
-				return (n);
-			else if (n >= 46341)
-				return (2147483647);
-			n++;
-		}
+		if (n * n == nb)
+			return (n);
+		n++;
 	}
 	return (0);
 }
