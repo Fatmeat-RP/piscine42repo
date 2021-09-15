@@ -6,7 +6,7 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 15:16:49 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/11 19:38:58 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/14 21:54:58 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	if (size == 0x00)
 		return (ft_strlen(src));
-	if (i >= size - 1)
+	if (i + 1 >= size)
 		return (i + ft_strlen(src));
 	j = 0;
 	while (src[j])
@@ -66,6 +66,10 @@ int	main(void)
 	char s8a[] = "ThanMyself";
 	char s7b[20] = "Shorter";
 	char s8b[] = "ThanMyself";
+	char s9a[] = "incroyableoi48yu8uy8y4rreqwp";
+	char s10a[] = "incroyableoi48yu8uy8y4rreqwp[opoijuasiujnher";
+	char s9b[] = "incroyableoi48yu8uy8y4rreqwp";
+	char s10b[] = "incroyableoi48yu8uy8y4rreqwp[opoijuasiujnher";
 
 	printf("%s\n", ft_strlcat(s1a, s2a, 6) == strlcat(s1b, s2b, 6) 
 	? "Success" : "Fail");
@@ -83,12 +87,12 @@ int	main(void)
 	? "Success" : "Fail");
 	printf("%s\n", strcmp(s7a, s7b) == 0 && strcmp(s8a, s8b) == 0 
 	? "Success" : "Fail");
-	
-	
+	printf("%s\n", strcmp(s9a, s9b) == 0 && strcmp(s10a, s10b) == 0 
+	? "Success" : "Fail");
 	printf("\n\nDetails:\n");
 	printf("%s:%s\n%s:%s\n", s1a, s1b, s2a, s2b);
 	printf("%s:%s\n%s:%s\n", s3a, s3b, s4a, s4b);
 	printf("%s:%s\n%s:%s\n", s5a, s5b, s6a, s6b);
 	printf("%s:%s\n%s:%s\n", s7a, s7b, s8a, s8b);
-	
+	printf("%s:%s\n%s:%s\n", s9a, s9b, s10a, s10b);
 }*/

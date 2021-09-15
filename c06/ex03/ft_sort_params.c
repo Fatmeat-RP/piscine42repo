@@ -12,16 +12,18 @@
 
 #include <unistd.h>
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_put_str(char *str)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		write(1, str, 1);
 }
 
-void	ft_swap(char *a, char *b)
+void	ft_swap(char **a, char **b)
 {
-	int	c;
+	int	*c;
 
 	c = *a;
 	*a = *b;
@@ -30,48 +32,27 @@ void	ft_swap(char *a, char *b)
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (s1[i] != 0x00 && (s1[i] == s2[i]))
 		i++;
-	return (s1[i] - s2[i]);
-}
-
-void	shit_if_better(char *argv1, char *argv2, int size)
-{
-	int		i;
-
-	i = 0;
-	while (i > size)
-	{
-		if ((ft_strcmp(argv2, argv1)) < 0)
-		{
-			ft_swap(*argv2, *argv1);
-			i = 0;
-		}
-		i++;
-	}
+	return (*s1 - *s2);
 }
 
 int	main(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (i < argc)
 	{
-		shit_if_better(argv[i], argv[i + 1], argc);
+		if (ft_strcmp(*argv[i - 1], argv[i]) > 0)
+		{
+			ft_swap(*argv[i], *argv[i - 1]);
+			i = 0;
+		}
+		ft_put_str(argv[i]);
 		i++;
 	}
-	i = 0;
-	while (++i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-			ft_putchar(argv[i][j++]);
-		ft_putchar('\n');
-	}
-	return (0);
 }
