@@ -10,25 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int		ft_in_base(char c, char *base)
 {
-	int	sign;
-	int	i;
-	int	n;
+	int i;
 
-	i = 0;
-	sign = 1;
-	while (((str[i] == 0x20) || (str[i] == 0x09)
-			|| (str[i] >= 0x0A && str[i] <= 0x0D)))
-		i++;
-	while (str[i] == 0x2D || str[i] == 0x2B)
-		if (str[i++] == 0x2D)
-			sign *= -1;
+	i = -1;
+	while (base[++i])
+		if (c == base[i])
+			return (i);
+	return (-1);
+}
+
+int		ft_baselen(char *base)
+{
+	int size;
+
+	size = -1;
+	while (base[++size])
+		if (base[size] == '+' || base[size] == '-' || base[size] == ' '
+			|| ft_in_base(base[size], base + size + 1) >= 0
+			|| (base[size] >= 9 && base[size] <= 13))
+			return (0);
+	return (size);
+}
+
+int		ft_atoi_base(char *str, char *base)
+{
+	int i;
+	int n;
+	int negative;
+	int size;
+
+	if ((size = ft_baselen(base)) < 2)
+		return (0);
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		str++;
+	negative = 0;
+	while (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			negative = 1 - negative;
 	n = 0;
-	while (str[i] >= 0x30 && str[i] <= 0x39)
+	while ((i = ft_in_base(*str, base)) >= 0)
 	{
-		n = 10 * n + (str[i] - '0');
-		i++;
+		n = n * size + i;
+		str++;
 	}
-	return (sign * n);
+	if (negative)
+		n *= -1;
+	return (n);
 }
