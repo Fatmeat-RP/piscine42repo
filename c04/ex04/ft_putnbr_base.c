@@ -6,7 +6,7 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 19:15:02 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/15 17:27:43 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/16 03:36:45 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@ int	ft_check_base(char c, char *base)
 	return (0);
 }
 
-void	ft_put_base(char *base, long size, long n)
+void	ft_put_base(char *base, int size, long n)
 {
 	if (n > size - 1)
 	{
 		ft_put_base(base, size, n / size);
-		n %= size;
+		n = n % size;
 	}
 	ft_putchar(base[n]);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	long	i;
+	int	i;
 
 	i = -1;
 	while (base[++i])
@@ -52,7 +52,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	if (nbr < 0)
 	{
 		ft_putchar('-');
-		ft_put_base(base, i, -nbr);
+		ft_put_base(base, i, -(long)nbr);
 	}
 	else
 		ft_put_base(base, i, nbr);

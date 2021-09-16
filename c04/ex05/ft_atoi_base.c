@@ -6,7 +6,7 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 19:15:04 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/15 21:08:31 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/16 03:37:07 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,25 @@ int	base_len(char *base)
 int	ft_check_base(char *base)
 {
 	int	i;
+	int	j;
 
-	i = -1;
-	while (base[++i])
+	i = 0;
+	while (base[i])
 	{
-		if (base[i] == 0x2B || base[i] == 0x2D || base[i] == ' '
-			|| base[i] == 0x00)
+		if (base[i] == '+' || base[i] == '-' || base[i] == ' ')
 			return (0);
 		if (base_len(base) < 2)
 			return (0);
+		j = 0;
+		while (base[j])
+		{
+			if (i == j)
+				break ;
+			if (base[i] == base[j])
+				return (0);
+			j++;
+		}
+		i++;
 	}
 	return (1);
 }
@@ -56,7 +66,7 @@ int	ft_atoi_base(char *str, char *base)
 	int		n;
 	int		sign;
 
-	if (!(ft_check_base(base)))
+	if ((ft_check_base(base)) == 0)
 		return (0);
 	i = 0;
 	sign = 1;
@@ -76,4 +86,17 @@ int	ft_atoi_base(char *str, char *base)
 		i++;
 	}
 	return (n * sign);
+}
+
+int	main(void)
+{
+	printf("42:%d\n", ft_atoi_base("2a", "0123456789abcdef"));
+	printf("-42:%d\n", ft_atoi_base("   --------+-2a", "0123456789abcdef"));
+	printf("42:%d\n", ft_atoi_base("   -+-2a", "0123456789abcdef"));
+	printf("0:%d\n", ft_atoi_base("   --------+-2a", "0129993456789abc9def"));
+	printf("0:%d\n", ft_atoi_base("   --------+-z", "0123456789abcdef"));
+	printf("0:%d\n", ft_atoi_base("   --------+-2a", ""));
+	printf("0:%d\n", ft_atoi_base("   --------+-2a", "0"));
+	printf("0:%d\n", ft_atoi_base("   --------+-2a", "+-0"));
+	printf("0:%d\n", ft_atoi_base("   --------+-2a", "\t01"));
 }
