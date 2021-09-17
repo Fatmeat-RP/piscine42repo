@@ -5,12 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 15:54:45 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/14 17:08:01 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/16 22:27:43 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/17 02:20:51 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_BOOL
-# define T_BOOL
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
+
+# include <unistd.h>
+
+typedef int	t_bool;
+# define TRUE 1
+# define FALSE 0
+
+# define EVEN_MSG "I have an even number of arguments. \n"
+# define ODD_MSG "I have an odd number of arguments. \n"
+# define SUCCESS 0
+
+# define EVEN(nbr) nbr % 2 == 0
 
 #endif

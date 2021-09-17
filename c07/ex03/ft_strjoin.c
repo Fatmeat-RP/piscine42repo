@@ -6,7 +6,7 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:17:55 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/14 04:05:54 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/17 02:21:05 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,10 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	imstuckstepbro[j + 1] = 0x00;
 	return (imstuckstepbro);
+}
+
+int	main(int argc, char **argv)
+{
+	printf("./ex03/output___said___this___is___a___success :\n");
+	printf("%s\n",  ft_strjoin(argc, argv, "___"));
 }
