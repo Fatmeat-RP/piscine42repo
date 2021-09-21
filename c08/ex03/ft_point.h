@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 16:14:28 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/21 01:12:10 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/18 22:39:27 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/18 23:52:34 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-char	*ft_strdup(char *src)
+typedef struct s_point
 {
-	char	*p;
-	int		i;
+	int	x;
+	int	y;
+}				t_point;
 
-	i = 0;
-	while (src[i])
-		i++;
-	p = malloc((i + 1) * sizeof(char));
-	i = 0;
-	if (!p)
-		return (NULL);
-	while (src[i])
-	{
-		p[i] = src[i];
-		i++;
-	}
-	p[i] = 0x00;
-	return (p);
-}
+#endif

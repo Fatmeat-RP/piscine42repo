@@ -1,34 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 16:14:28 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/21 01:12:10 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/19 01:33:49 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/21 02:33:21 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-char	*ft_strdup(char *src)
+struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	char	*p;
-	int		i;
-
-	i = 0;
-	while (src[i])
-		i++;
-	p = malloc((i + 1) * sizeof(char));
-	i = 0;
-	if (!p)
-		return (NULL);
-	while (src[i])
-	{
-		p[i] = src[i];
-		i++;
-	}
-	p[i] = 0x00;
-	return (p);
+	char
 }

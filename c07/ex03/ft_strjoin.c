@@ -6,7 +6,7 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 16:17:55 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/17 02:21:05 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 03:54:31 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ int	ft_strlen(char *str)
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int	i;
+	unsigned int	i;
 
-	i = -1;
-	while (src[++i])
+	i = 0;
+	while (src[i])
+	{
 		dest[i] = src[i];
+		i++;
+	}
 	dest[i] = 0x00;
 	return (dest);
 }
