@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_is_printable.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 22:05:41 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/22 01:45:16 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/22 13:34:22 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/22 13:35:04 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../../bsq.h"
 
-int	ft_find_sep(char *src, char *sep_set)
+int	is_printable(char c)
 {
+	return (' ' <= c && c <= '~');
 }
-
-char	**ft_split(char *src, char *charset)
-{
-	char	**array;
-
-	return (array);
-}
-
-/*------------------------------------------------*/
-/*                   EMPTY FILE                   */
-/*------------------------------------------------*/

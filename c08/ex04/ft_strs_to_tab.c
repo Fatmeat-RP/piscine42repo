@@ -6,11 +6,13 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 01:33:49 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/21 02:33:21 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/21 12:56:28 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	char
+
+	while()
 }

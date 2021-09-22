@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_clean_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 22:05:41 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/22 01:45:16 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/22 13:20:14 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/22 13:24:21 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../../bsq.h"
 
-int	ft_find_sep(char *src, char *sep_set)
+void	ft_clean_tab(int **map, t_map_infos map_infos)
 {
+	int	i;
+
+	i = 0;
+	while (i < map_infos.lines_number)
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
 }
-
-char	**ft_split(char *src, char *charset)
-{
-	char	**array;
-
-	return (array);
-}
-
-/*------------------------------------------------*/
-/*                   EMPTY FILE                   */
-/*------------------------------------------------*/

@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_is_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 22:05:41 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/22 01:45:16 by acarle-m         ###   ########lyon.fr   */
+/*   Created: 2021/09/22 13:34:26 by acarle-m          #+#    #+#             */
+/*   Updated: 2021/09/22 13:35:04 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../../bsq.h"
 
-int	ft_find_sep(char *src, char *sep_set)
+int	is_number(char c)
 {
+	return ('0' <= c && c <= '9');
 }
-
-char	**ft_split(char *src, char *charset)
-{
-	char	**array;
-
-	return (array);
-}
-
-/*------------------------------------------------*/
-/*                   EMPTY FILE                   */
-/*------------------------------------------------*/
