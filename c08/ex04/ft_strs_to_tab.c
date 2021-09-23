@@ -6,7 +6,7 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 01:33:49 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/23 04:36:22 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/23 06:03:46 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		par[n].copy = ft_strdup(av[n]);
 		n++;
 	}
+	par[n].str = 0;
 	return (par);
 }

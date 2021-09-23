@@ -6,12 +6,15 @@
 /*   By: acarle-m <acarle-m@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 03:30:54 by acarle-m          #+#    #+#             */
-/*   Updated: 2021/09/23 04:57:41 by acarle-m         ###   ########lyon.fr   */
+/*   Updated: 2021/09/23 10:10:27 by acarle-m         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "ft_stock_str.h"
+
+struct	s_stock_str	*ft_strs_to_tab(int ac, char **av);
 
 void	ft_putchar(char c)
 {
